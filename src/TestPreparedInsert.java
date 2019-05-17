@@ -29,36 +29,34 @@ public class TestPreparedInsert {
 		 System.out.print("Enter Country Code:");
 		 countryCode = scanner.nextLine();
 		 
+		 System.out.print("Enter District:");
+		 district = scanner.nextLine();
+		 
 		 //System.out.print("Enter Date of Joining : ");
 		 //hiredate = java.sql.Date.valueOf(scanner.nextLine());
 		 
 		 System.out.print("Enter Population:  ");
-		 population = scanner.nextDouble();
-		 
-		 String sql = "insert into NewEmployees values ( ?,?,?,?,? )";
-		 
+		 population = scanner.nextDouble();	 
 		 
 		 System.out.println("cityId is:  "+cityId);
 		 System.out.println("name is:  "+name);
 		 System.out.println("countryCode is:  "+countryCode);
+		 System.out.println("district is:  "+district);
 		 System.out.println("population is:  "+population);
-		
-		 
-		 scanner.close();
-		 
-		 /*
+	
+		 String sql = "insert into city values ( ?,?,?,?,? )";
 		 
 		 PreparedStatement pstmt  = conn.prepareStatement(sql);
 		 
-		 pstmt.setInt(1, empno);
-		 pstmt.setString(2, ename);
-		 pstmt.setString(3, email);
-		 pstmt.setDate(4, hiredate);
-		 pstmt.setDouble(5, salary);
+		 pstmt.setInt(1, cityId);
+		 pstmt.setString(2, name);
+		 pstmt.setString(3, countryCode);
+		 pstmt.setString(4, district);
+		 pstmt.setDouble(5, population);
 		 
 		 int result = pstmt.executeUpdate();
 		 
-		 if( result == 1 )
+		 if( result == 1 ) //added one record
 		 {
 			 System.out.println("Record Inserted Successfully.");
 		 }
@@ -70,7 +68,6 @@ public class TestPreparedInsert {
 		 pstmt.close();
 		 conn.close();
 		 
-		 */
 	}
 
 }
